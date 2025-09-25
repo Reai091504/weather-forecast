@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Weather Forecast</title>
+     <link rel="stylesheet" href="styles.css">
+     <link rel="stylesheet" href="responsive.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+ </head>
+ <body>
+ 
+     <main class="app">
+         <header class="app__header">
+             <h1>Weather Forecast</h1>
+             <p class="tagline">Get current conditions by city name</p>
+         </header>
+ 
+         <form class="weatherForm" novalidate aria-label="Get weather by city">
+             <label for="city" class="sr-only">City</label>
+             <input id="city" type="text" class="cityInput" placeholder="Enter city" autocomplete="off">
+             <button type="submit" aria-label="Fetch weather">Get Weather</button>
+         </form>
+ 
+         <div class="card" style="display: none" role="region" aria-live="polite" aria-atomic="true">
+         </div>
+     </main>
+  
+     <script src="index.js"></script>
+ </body>
+</html>

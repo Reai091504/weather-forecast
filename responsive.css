@@ -1,0 +1,125 @@
+/* Responsive overrides and enhancements */
+
+/* Base layout and typography */
+body{
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  min-height: 100svh;
+  padding: 16px;
+  color: hsl(220, 15%, 15%);
+}
+
+/* App shell helpers (added in index.html) */
+.app{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.app__header{
+  width: 100%;
+  max-width: 720px;
+  text-align: center;
+  margin-top: 8px;
+}
+.tagline{
+  margin: 0 0 8px;
+  color: hsl(220, 10%, 35%);
+}
+
+/* Form layout */
+.weatherForm{
+  margin: 20px 0 !important;
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.cityInput{
+  padding: 12px 14px !important;
+  font-size: clamp(1rem, 3.5vw, 1.25rem) !important;
+  font-weight: 600 !important;
+  border: 2px solid hsla(0, 0%, 20%, 0.2) !important;
+  border-radius: 12px !important;
+  margin: 0 !important;
+  width: 100% !important;
+  outline: none;
+}
+button[type="submit"]{
+  padding: 12px 20px !important;
+  font-weight: 700 !important;
+  font-size: clamp(1rem, 3.5vw, 1.25rem) !important;
+  background-color: hsl(122, 39%, 50%) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 12px !important;
+  cursor: pointer;
+  transition: background-color 160ms ease, transform 80ms ease;
+}
+button[type="submit"]:hover{ background-color: hsl(122, 39%, 40%) !important; }
+button[type="submit"]:active{ transform: translateY(1px); }
+button[type="submit"]:focus-visible{
+  outline: 3px solid hsl(210, 100%, 75%);
+  outline-offset: 2px;
+}
+
+/* Card */
+.card{
+  padding: clamp(24px, 5vw, 48px) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.15) !important;
+  min-width: 280px !important;
+  width: 100% !important;
+  max-width: 720px !important;
+  margin: 8px 0 24px !important;
+  animation: fadeIn 240ms ease;
+}
+
+/* Typography */
+h1{
+  margin-bottom: 12px !important;
+  font-size: clamp(1.5rem, 4vw, 2.25rem) !important;
+}
+p{
+  font-size: clamp(1rem, 3.2vw, 1.125rem) !important;
+  margin: 6px 0 !important;
+}
+.cityDisplay, .tempDisplay{
+  font-size: clamp(2rem, 8vw, 3.5rem) !important;
+  font-weight: 800 !important;
+  color: hsla(0, 0%, 0%, 0.85) !important;
+  margin-bottom: 20px !important;
+  text-align: center;
+}
+.humidityDisplay{ font-weight: 700 !important; margin-bottom: 16px !important; }
+.descDisplay{
+  font-style: italic !important;
+  font-weight: 700 !important;
+  font-size: clamp(1.125rem, 4vw, 1.5rem) !important;
+  text-align: center;
+}
+.weatherEmoji{ margin: 8px 0 0 !important; font-size: clamp(3.5rem, 16vw, 7.5rem) !important; }
+.errorDisplay{ font-size: clamp(1.25rem, 5vw, 2rem) !important; font-weight: 800 !important; text-align: center; }
+
+/* Screen reader only utility */
+.sr-only{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Responsive layout adjustments */
+@media (min-width: 640px){
+  .weatherForm{ flex-direction: row; align-items: center; }
+}
+
+@keyframes fadeIn{
+  from{ opacity: 0; transform: translateY(4px); }
+  to{ opacity: 1; transform: translateY(0); }
+}
